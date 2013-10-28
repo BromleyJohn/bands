@@ -1,5 +1,7 @@
  $(document).ready(function(){
 
+    alert("U R here!!!"); 
+
     $.ajax({ // ajax call starts
         
          url: 'http://johnah.byethost7.com/cities.php?callback=?', // JQuery loads serverside.php
