@@ -1,5 +1,5 @@
- $(document).ready(function(){
-
+ //$(document).ready(function(){
+document.addEventListener("deviceready", function(){
     alert("U R here!!!"); 
 
    // $.ajax({ // ajax call starts
