@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+<head>
+<title>jQuery Ajax Example with JSON Response</title>
+
+</head>
+
+
+<body>
+  <h1>Cities</h1> 
+  <div id="cities">
+  <!-- Javascript will print data in here when we have finished the page -->
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+
+   $(document).ready(function(){
+
+    $.ajax({ // ajax call starts
+        
+         url: 'http://johnah.byethost7.com/cities.php?callback=?', // JQuery loads serverside.php
+        
+        //url: 'cities.php', // JQuery loads serverside.php
+  	      dataType: 'jsonp', // Choosing a JSON datatype json for local jasonp for crossweb - NOT SURE ABOUT THIS!!!
+          success: function(data) // Variable data contains the data we get from serverside
+          {
+          $('#cities').html(''); // Clear #bands div
+          for (var i in data) {
+             $('#cities').append(data[i] + '<br/>');
+          }
+
+        }
+    });
+            
+});
+
+  </script>
+ 
+</body>
+</html>
